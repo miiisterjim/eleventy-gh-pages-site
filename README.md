@@ -2,6 +2,46 @@
 
 This documentation is built using [11ty](https://www.11ty.dev/), a static site generator. Additionally it leverages [Nunjucks](https://www.11ty.dev/docs/languages/nunjucks/) for templating.
 
+## Prerequisites
+
+To run this project locally, you need:
+
+- **Node.js** (version 16.x or later recommended)
+- **npm** (comes with Node.js)
+
+You can check your versions with:
+
+```bash
+node --version
+npm --version
+```
+
+Download Node.js from [nodejs.org](https://nodejs.org/).
+
+## Configuration
+
+If you are deploying to GitHub Pages, you should set the `pathPrefix` in your Eleventy config to match your repository name. This ensures all site URLs are correct when hosted at `https://USERNAME|ORGANISATION.github.io/PATH-PREFIX/`.
+
+In `eleventy.config.js`, add or update:
+
+```js
+export default function(eleventyConfig) {
+  // ...existing config...
+  return {
+    // ...over values omitted
+    pathPrefix: "/repo-name", // Replace `repo-name` with your GitHub repository name
+  };
+}
+```
+
+For example, if your repo is `eleventy-gh-pages-site`, use:
+
+```js
+pathPrefix: "/eleventy-gh-pages-site/"
+```
+
+This setting is only needed for GitHub Pages or similar subdirectory hosting.
+
 ## Building the site
 
 To build the static site, run:

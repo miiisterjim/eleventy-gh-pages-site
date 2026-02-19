@@ -23,6 +23,6 @@ export default async function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     passthroughFileCopy: true,
-    pathPrefix: '/service-name',
+    pathPrefix: '/eleventy-gh-pages-site',
   };
 }
