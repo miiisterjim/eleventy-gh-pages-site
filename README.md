@@ -109,17 +109,58 @@ To add a new page to the documentation site:
 
 3. **Add the page to the menu:**
    - Open `src/_data/menu.json`.
-   - Add a new entry for your page, for example:
-     ```json
-     [
-       ...existing menu items...,
-       {
-         "label": "Contact",
-         "path": "/contact"
-       }
+   - Add a new entry for your page to the relevant section, for example:
+   
+```json
+    [
+      ...existing menu items...,
+      {
+        "label": "Section 1",
+        "items": [
+          { "label": "Item 1", "path": "/section-1/item-1" },
+          { "label": "Item 2", "path": "/section-1/item-2" }
+          { "label": "YOUR NEW ITEM", "path": "/section-1/your-new-item" }      
+        ]
+      },
      ]
-     ```
+```
    - Save the file. The menu will update automatically when the site reloads.
+
+### Page routing
+
+#### Kebab-case page
+If you create a file called `about-us.md` in the `src` directory:
+
+```
+src/about-us.md
+```
+The generated route will be:
+```
+/about-us/
+```
+This means the page will be available at `https://YOUR_DOMAIN/about-us/`.
+
+#### Nested page
+If you create a nested page like `section-1/index.md`:
+
+```
+src/section-1/index.md
+src/section-1/some-menu-item.md
+```
+The generated routes will be:
+```
+/section-1/
+/section-1/some-menu-item
+```
+This means the pages will be available at `https://YOUR_DOMAIN/section-1/` & `https://YOUR_DOMAIN/section-1/some-menu-item` respectively.
+
+
+**Explanation:**
+- Eleventy automatically converts file and folder names to kebab-case routes.
+- `index.md` or `index.njk` in a folder becomes the route for that folder.
+- Other files in the folder become sub-routes.
+
+You can link to these pages in your menu by using the generated route (e.g., `/about-us/`, `/section-1/`).
 
 ## Adding a new section to the menu
 
