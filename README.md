@@ -96,13 +96,13 @@ To add a new page to the documentation site:
 
 2. **Specify the template and title:**
    - At the top of your new file, set the layout and title. Example for Markdown:
-     
+
      ```markdown
      ---
      layout: default
      title: Contact
      ---
-     
+
      Your page content goes here.
      ```
    - For Nunjucks, you can follow the same approach.
@@ -110,7 +110,7 @@ To add a new page to the documentation site:
 3. **Add the page to the menu:**
    - Open `src/_data/menu.json`.
    - Add a new entry for your page to the relevant section, for example:
-   
+
 ```json
     [
       ...existing menu items...,
@@ -119,7 +119,7 @@ To add a new page to the documentation site:
         "items": [
           { "label": "Item 1", "path": "/section-1/item-1" },
           { "label": "Item 2", "path": "/section-1/item-2" }
-          { "label": "YOUR NEW ITEM", "path": "/section-1/your-new-item" }      
+          { "label": "YOUR NEW ITEM", "path": "/section-1/your-new-item" }
         ]
       },
      ]
@@ -184,6 +184,22 @@ The menu is structured as an array of sections, each with a `label` and `items`,
 After editing and saving `menu.json`, the navigation will update automatically when the site reloads.
 
 > Presentation of the menu is implemented in `/src/_includes/sidebar.njk` and `/src/_includes/mobile-menu.njk`
+
+## Editing page content
+Page content management follows standard markdown conventions.
+
+### Adding pre-formatted content to your page
+For easy to read pre-formatted code snippets you can use the installed Eleventy syntaxhighlight plugin as follows:
+
+```js
+<!-- prettier-ignore-start -->
+{% highlight "js" %}
+function myFunction() {
+  return true;
+}
+{% endhighlight %}
+<!-- prettier-ignore-end -->
+```
 
 ---
 
