@@ -1,4 +1,5 @@
 {
+  // --- Formatting ---
   "editor.formatOnSave": true,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -11,5 +12,9 @@
   },
   "[njk]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+
+  // --- File hygiene ---
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true
 }
